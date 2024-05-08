@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 1000px;
+        }
+
+        section {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            margin: 150px auto;
+            transform-style: preserve-3d;
+            animation: rotate 10s linear infinite;
+            background: url(images/pig.jpg);
+
+        }
+
+        section:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotatey(0);
+
+            }
+
+            100% {
+                transform: rotatey(360deg);
+            }
+        }
+
+        section div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(images/dog.jpg) no-repeat;
+        }
+
+        section div:nth-child(1) {
+            transform: translatez(300px);
+        }
+
+        /* 先旋转好了在移动距离 */
+        section div:nth-child(2) {
+            transform: rotatey(60deg) translatez(300px);
+        }
+
+        section div:nth-child(3) {
+            transform: rotatey(120deg) translatez(300px);
+        }
+
+        section div:nth-child(4) {
+            transform: rotatey(180deg) translatez(300px);
+        }
+
+        section div:nth-child(5) {
+            transform: rotatey(240deg) translatez(300px);
+        }
+
+        section div:nth-child(6) {
+            transform: rotatey(300deg) translatez(300px);
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+
+</body>
+
+</html>
